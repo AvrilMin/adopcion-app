@@ -23,7 +23,11 @@
 	background-color: var(--color-gris-claro);
 }
 
-.btn-Activado{
+.btn-Activado[aria-current="page"]{
+	background-color: var(--color-celeste);
+}
+
+.btn-Activado:hover{
 	background-color: var(--color-celeste);
 }
 
