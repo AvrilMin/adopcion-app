@@ -30,17 +30,27 @@ const Sidebar = () => {
 				</NavLink>
 
 				<NavLink
-				to="/admin/versolicitudes"
-				className="flex btn-sinActivar btn-Activado font-semibold items-center justify-start rounded-[10px] gap-2 p-3"
-				>
+					to="/admin/versolicitudes"
+					className="relative flex btn-sinActivar btn-Activado font-semibold items-center justify-start rounded-[10px] gap-2 p-3"
+					>
+					{/* Badge */}
+					<span className="absolute top-1 right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+						12
+					</span>
+
 					<MdAssignment size={20} /> Ver Solicitudes
 				</NavLink>
 
 				<NavLink
-				to="/admin/gestionarproductos"
-				className="flex btn-sinActivar btn-Activado font-semibold items-center justify-start rounded-[10px] gap-2 p-3"
-				>
-					<MdInventory2 size={20} /> Gestionar Productos
+					to="/admin/gestionarproductos"
+					className="relative flex btn-sinActivar btn-Activado font-semibold items-center justify-start rounded-[10px] gap-2 p-3"
+					>
+					{/* Badge */}
+					<span className="absolute top-1 right-2 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+						4
+					</span>
+
+					<MdAssignment size={20} /> Gestionar Productos
 				</NavLink>
 
 				<NavLink
