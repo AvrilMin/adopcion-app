@@ -1,0 +1,32 @@
+
+
+/* 🎨 Definimos la paleta de colores como variables CSS */
+:root {
+  --color-oscuro: #1D2A3E;
+  --color-celeste: #55C3D9;
+  --color-gris-claro: #f5F5F5;
+  --color-texto-claro: #FFFFFF;
+  --color-texto-oscuro: #1D2A3E;
+  --color-claro: #313A4D;
+}
+
+
+.bg-sidebar {
+  background-color: var(--color-oscuro);
+}
+
+.text-sidebar {
+  color: var(--color-texto-claro);
+}
+
+.bg-gris {
+	background-color: var(--color-gris-claro);
+}
+
+.btn-Activado{
+	background-color: var(--color-celeste);
+}
+
+.btn-sinActivar{
+	background-color: var(--color-claro);
+}
