@@ -4,7 +4,6 @@ import {
   	MdDashboard,
   	MdPets,
   	MdAssignment,
-  	MdInventory2,
   	MdShoppingBag,
   	MdLogout
 } from "react-icons/md";
