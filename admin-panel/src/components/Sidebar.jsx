@@ -10,7 +10,7 @@ import {
 
 const Sidebar = () => {
   	return (
-		<aside className="bg-sidebar w-64 min-h-screen px-4 text-sidebar flex flex-col">
+		<aside className="fixed bg-sidebar w-70 min-h-screen px-4 text-sidebar flex flex-col">
 			<h2 className="text-2xl font-bold text-center my-11">Admin</h2>
 
 			<nav className="flex flex-col gap-10 flex-1 justify-center">
