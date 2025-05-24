@@ -36,42 +36,8 @@
 	background-color: var(--color-claro);
 }
 
-h1{
+.h1{
   font-weight:600;
-  font-size: 25px;
-  color: var(--azuloscuro)
-}
-
-
-
-
-/* Scrollbar para navegadores basados en WebKit (Chrome, Edge, Brave, Safari) */
-.scrollbar-custom::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 100px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb {
-  background-color: #1D2A3E; /* color normal */
-  border-radius: 100px;
-  border: 2px solid transparent;
-  transition: background-color 0.2s ease;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb:hover {
-  background-color: #27364d; /* al hacer hover */
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb:active {
-  background-color: #121b28; /* al hacer clic o arrastrar */
-}
-
-/* Scrollbar para Firefox */
-.scrollbar-custom {
-  scrollbar-color: #1D2A3E #f1f1f1;
+  font-size: 25px;  
+  color: var(--azuloscuro);
 }
