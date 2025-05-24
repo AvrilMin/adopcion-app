@@ -24,17 +24,7 @@ const Editar = () => {
                 cancelText="Cancelar"
             >
                 {/* Contenido dinámico */}
-                <Input label="Nombre" />
-                <Select label="Categoría">
-                <Option>Clothing</Option>
-                <Option>Fashion</Option>
-                <Option>Watches</Option>
-                </Select>
-                <div className="flex gap-2">
-                <Input label="Peso" />
-                <Input label="Tamaño" />
-                </div>
-                <Textarea label="Descripción" />
+                <Input  />
 
             </ReusableModal>
         </>

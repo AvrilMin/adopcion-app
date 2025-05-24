@@ -6,10 +6,9 @@ import {
   DialogHeader,
   DialogFooter,
   Typography,
-  IconButton,
 } from "@material-tailwind/react";
 
-import { XMarkIcon } from "@heroicons/react/24/outline";
+
 
 const Modal = ({
 	open, 
@@ -22,35 +21,30 @@ const Modal = ({
 	cancelText="cancelar"}) => {
 
   	return (
-    	<Dialog open={open}>
-			<DialogHeader>
-				<Typography>
+    	<Dialog size="sm" open={open} className='fixed p-8 flex flex-col justify-center top-1/2 -translate-y-1/2 w-auto'>
+			<DialogHeader className='flex flex-col'>
+				<Typography className="h1">
 					{title}
 				</Typography>
 				{subtitle && (
-					<Typography>
+					<Typography className='h2'>
 						{subtitle}
 					</Typography>
 				)}
-				<IconButton
-					size="sm"
-					variant="text"
-					className="!absolute right-3.5 top-3.5"
-					onClick={onClose}
-				>
-				<XMarkIcon className="h-4 w-4 stroke-2" />
-				</IconButton>
+
 			</DialogHeader>
 			<DialogBody>
 				{children}
 			</DialogBody>
-			<DialogFooter>
-				<Button onClick={onConfirm}>{confirmText}</Button>
+			<DialogFooter className='flex gap-4'>
 				{cancelText && (
-					<Button onClick={onClose}>
+					<Button variant="text" onClick={onClose} className=' cursor-pointer'>
 						{cancelText}
 					</Button>
 				)}
+
+				<Button onClick={onConfirm} className='bg-green-500 text-white cursor-pointer'>{confirmText}</Button>
+
 			</DialogFooter>
 		</Dialog>
   	)

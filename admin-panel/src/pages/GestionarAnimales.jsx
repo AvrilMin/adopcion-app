@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import cat1 from '../components/cat1.jpeg';
+import { Input} from '@material-tailwind/react';
+import ReusableModal from '../components/Modal'
 
 //import editar 
-import Editar from '../components/Animales/Editar'
+//import Editar from '../components/Animales/Editar'
 
 const animalList = [
   	{ id: 1, nombre: 'Pelusa', edad: '2 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Tranquilo', salud: 'Buena', fechaNacimiento: '2018-03-12', imagen: cat1 },
@@ -15,7 +17,11 @@ const animalList = [
 ];
 
 const GestionarAnimales = () => {
-
+		const [open,setOpen]=useState(false);
+		
+		const handleUpdateAnimal= () =>{
+			console.log("Animal actualizado")
+		}
 
 	//PAGINACION
   	const [active, setActive] = useState(1);
@@ -35,19 +41,21 @@ const GestionarAnimales = () => {
 
   	return (
 		<div>
-			<h1 className="mb-8">Gestionar Animales</h1>
+			<h1 className=" h1 mb-8">Gestionar Animales</h1>
 		
+			{/*BARRA DE BUSQUEDA Y BOTÓN AÑADIR */}
 			<div className="w-full mb-8 flex flex-wrap justify-start items-center gap-4">
 				<input
 				type="text"
 				placeholder="Buscar por nombre..."
 				className="flex-grow max-w-md min-w-[250px] px-4 py-2 text-sm text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--azuloscuro)] transition"
 				/>
-				<button className="px-6 py-2 text-sm font-semibold bg-[var(--azuloscuro)] text-white rounded-lg shadow-sm hover:bg-opacity-90 cursor-pointer">
+				<button className="px-6 py-2 text-sm font-semibold bg-[var(--color-celeste)] text-white rounded-lg shadow-sm hover:bg-opacity-90 cursor-pointer">
 				Añadir
 				</button>
 			</div>
 
+			{/*TABLA DE INFORMACIÓN */}
 			<div className="w-full overflow-x-auto max-h-[800px] overflow-y-auto shadow-md rounded-lg">
 				<table className="min-w-full text-sm text-left bg-white">
 					<thead className="text-xs text-center text-[var(--azuloscuro)] uppercase bg-gray-100 sticky top-0 z-10">
@@ -78,7 +86,7 @@ const GestionarAnimales = () => {
 							<td className="px-6 py-4 text-center">{animal.salud}</td>
 							<td className="px-6 py-4">
 							<div className="flex justify-center items-center gap-2">
-								<Editar />
+								<button onClick={()=>setOpen(true)} data-dialog-target="modal" className="bg-[var(--azuloscuro)] text-white px-3 py-1 rounded cursor-pointer">Editar</button>
 								<button className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer">Eliminar</button>
 							</div>
 							</td>
@@ -89,7 +97,7 @@ const GestionarAnimales = () => {
 			</div>
 
 
-			{/*Botones de paginación */}
+			{/*BOTONES DE PAGINACIÓN*/}
 			<div className="flex items-center justify-center gap-6 mt-6">
 				<button
 					onClick={prev}
@@ -116,6 +124,22 @@ const GestionarAnimales = () => {
 					→
 				</button>
 			</div>
+
+
+			{/*MODAL */}
+			<ReusableModal
+                open={open}
+                onClose={()=>setOpen(false)}
+                title="Editar Animal"
+                subtitle="Actualiza la información de este animal"
+                onConfirm={handleUpdateAnimal}
+                confirmText="Actualizar"
+                cancelText="Cancelar"
+            >
+                {/* Contenido dinámico */}
+                <Input/>
+
+            </ReusableModal>
 		</div>
   	);
 };
