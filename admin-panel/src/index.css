@@ -48,3 +48,21 @@
   color: var(--azuloscuro);
 }
 
+.subtitleCards{
+  font-weight:400;
+  font-size: 16px;  
+  margin-bottom: 25px;
+  color: var(--azuloscuro);
+}
+
+.labelText{
+	font-weight: 500;
+	font-size: 17px;
+	color: var(--azuloscuro);
+}
+
+.titleCards{
+	font-weight: 500;
+	font-size: 24px;
+	margin-bottom:4px;
+}

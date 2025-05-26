@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import cat1 from '../components/cat1.jpeg';
-import { Input} from '@material-tailwind/react';
-import ReusableModal from '../components/Modal'
 
-//import editar 
-//import Editar from '../components/Animales/Editar'
+//import EditarAnimal
+import EditarAnimal from '../components/Animales/EditarAnimal';
+import EliminarAnimal from '../components/Animales/EliminarAnimal';
 
 const animalList = [
   	{ id: 1, nombre: 'Pelusa', edad: '2 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Tranquilo', salud: 'Buena', fechaNacimiento: '2018-03-12', imagen: cat1 },
@@ -12,16 +11,11 @@ const animalList = [
   	{ id: 3, nombre: 'Luna', edad: '3 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Curiosa', salud: 'Regular', fechaNacimiento: '2019-05-15', imagen: cat1 },
   	{ id: 4, nombre: 'Pepe', edad: '3 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Curiosa', salud: 'Regular', fechaNacimiento: '2019-05-15', imagen: cat1 },
   	{ id: 5, nombre: 'Pedrita', edad: '3 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Curiosa', salud: 'Regular', fechaNacimiento: '2019-05-15', imagen: cat1 },
-	{ id: 5, nombre: 'Pedrita', edad: '3 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Curiosa', salud: 'Regular', fechaNacimiento: '2019-05-15', imagen: cat1 },
-	{ id: 5, nombre: 'Pedrita', edad: '3 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Curiosa', salud: 'Regular', fechaNacimiento: '2019-05-15', imagen: cat1 },
+	{ id: 6, nombre: 'Pedrita', edad: '3 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Curiosa', salud: 'Regular', fechaNacimiento: '2019-05-15', imagen: cat1 },
+	{ id: 7, nombre: 'Pedrita', edad: '3 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Curiosa', salud: 'Regular', fechaNacimiento: '2019-05-15', imagen: cat1 },
 ];
 
 const GestionarAnimales = () => {
-		const [open,setOpen]=useState(false);
-		
-		const handleUpdateAnimal= () =>{
-			console.log("Animal actualizado")
-		}
 
 	//PAGINACION
   	const [active, setActive] = useState(1);
@@ -86,8 +80,8 @@ const GestionarAnimales = () => {
 							<td className="px-6 py-4 text-center">{animal.salud}</td>
 							<td className="px-6 py-4">
 							<div className="flex justify-center items-center gap-2">
-								<button onClick={()=>setOpen(true)} data-dialog-target="modal" className="bg-[var(--azuloscuro)] text-white px-3 py-1 rounded cursor-pointer">Editar</button>
-								<button className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer">Eliminar</button>
+								<EditarAnimal/>
+								<EliminarAnimal/>
 							</div>
 							</td>
 						</tr>
@@ -125,21 +119,6 @@ const GestionarAnimales = () => {
 				</button>
 			</div>
 
-
-			{/*MODAL */}
-			<ReusableModal
-                open={open}
-                onClose={()=>setOpen(false)}
-                title="Editar Animal"
-                subtitle="Actualiza la información de este animal"
-                onConfirm={handleUpdateAnimal}
-                confirmText="Actualizar"
-                cancelText="Cancelar"
-            >
-                {/* Contenido dinámico */}
-                <Input/>
-
-            </ReusableModal>
 		</div>
   	);
 };
