@@ -25,7 +25,7 @@ const Sidebar = () => {
 				to="/admin/gestionaranimales"
 				className="flex btn-sinActivar btn-Activado font-semibold items-center justify-start rounded-[10px] gap-2 p-3"
 				>
-					<MdPets size={20} /> Gestionar Animales
+					<MdPets size={20} /> Gestionar Mascotas
 				</NavLink>
 
 				<NavLink

@@ -11,14 +11,16 @@ const EliminarAnimal = () => {
 	}
   	return (
 		<>
-			<button onClick={()=>setOpen(true)} className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer">Eliminar</button>
+			<button onClick={()=>setOpen(true)} className="bg-red-500 text-white px-3 py-1 hover:shadow-xl rounded cursor-pointer">Eliminar</button>
 
             <ReusableModal
                 open={open}
                 onClose={()=>setOpen(false)}
-                title="Eliminar Animal"
-                subtitle="¿Seguro que desea eliminar este animal?"
+                title="Eliminar Mascota"
+                subtitle="¿Seguro que desea eliminar esta mascota?"
                 onConfirm={handleDeleteAnimal}
+				confirmButtonStyle="bg-red-500"
+				positionButtons="justify-center"
                 confirmText="Eliminar" 
                 cancelText="Cancelar"
             >

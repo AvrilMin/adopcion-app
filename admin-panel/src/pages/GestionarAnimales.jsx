@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import cat1 from '../components/cat1.jpeg';
 
 //import EditarAnimal
-import EditarAnimal from '../components/Animales/EditarAnimal';
-import EliminarAnimal from '../components/Animales/EliminarAnimal';
+import EditarMascota from '../components/Animales/EditarMascota';
+import EliminarMascota from '../components/Animales/EliminarMascota';
+import AñadirMascota from '../components/Animales/AñadirMascota';
+
+import { IoSearch } from "react-icons/io5";
 
 const animalList = [
   	{ id: 1, nombre: 'Pelusa', edad: '2 años', especie: 'Felino', sexo: 'Hembra', comportamiento: 'Tranquilo', salud: 'Buena', fechaNacimiento: '2018-03-12', imagen: cat1 },
@@ -35,18 +38,23 @@ const GestionarAnimales = () => {
 
   	return (
 		<div>
-			<h1 className=" h1 mb-8">Gestionar Animales</h1>
+			<h1 className=" h1 mb-8">Gestionar Mascotas</h1>
 		
 			{/*BARRA DE BUSQUEDA Y BOTÓN AÑADIR */}
-			<div className="w-full mb-8 flex flex-wrap justify-start items-center gap-4">
-				<input
-				type="text"
-				placeholder="Buscar por nombre..."
-				className="flex-grow max-w-md min-w-[250px] px-4 py-2 text-sm text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--azuloscuro)] transition"
-				/>
-				<button className="px-6 py-2 text-sm font-semibold bg-[var(--color-celeste)] text-white rounded-lg shadow-sm hover:bg-opacity-90 cursor-pointer">
-				Añadir
-				</button>
+			<div className="w-full mb-8 flex flex-wrap justify-between items-center gap-4">
+				<div className='flex gap-5'>
+					<input
+					type="text"
+					placeholder="Buscar por nombre..."
+					className="flex-grow max-w-md min-w-[400px] px-4 py-2 text-sm text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--azuloscuro)] transition"
+					/>
+
+					<button className="flex items-center justify-center gap-2 px-6 py-2 text-[15px] hover:shadow-xl font-semibold bg-[var(--color-celeste)] text-white rounded-lg shadow-sm hover:bg-opacity-90 cursor-pointer">
+						<IoSearch size={20} className="text-white font-bold" /> Buscar
+					</button>
+
+				</div>
+				<AñadirMascota />
 			</div>
 
 			{/*TABLA DE INFORMACIÓN */}
@@ -80,8 +88,8 @@ const GestionarAnimales = () => {
 							<td className="px-6 py-4 text-center">{animal.salud}</td>
 							<td className="px-6 py-4">
 							<div className="flex justify-center items-center gap-2">
-								<EditarAnimal/>
-								<EliminarAnimal/>
+								<EditarMascota/>
+								<EliminarMascota/>
 							</div>
 							</td>
 						</tr>

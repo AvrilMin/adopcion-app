@@ -11,7 +11,7 @@ const EditarAnimal = () => {
     }
     return (
         <>
-            <button onClick={()=>setOpen(true)} className="bg-[var(--color-celeste)] text-white px-3 py-1 rounded cursor-pointer">Editar</button>
+            <button onClick={()=>setOpen(true)} className="bg-[var(--color-celeste)] hover:shadow-xl text-white px-3 py-1 rounded cursor-pointer">Editar</button>
 
             <ReusableModal
                 open={open}
@@ -19,7 +19,9 @@ const EditarAnimal = () => {
                 title="Editar Animal"
                 subtitle="Actualiza la información de este animal"
                 onConfirm={handleUpdateAnimal}
-                confirmText="Actualizar"
+                confirmText="Guardar Cambios"
+				positionButtons="justify-end"
+				confirmButtonStyle="bg-[var(--color-celeste)]"
                 cancelText="Cancelar"
             >
                 {/* Contenido dinámico */}
