@@ -17,7 +17,7 @@ const EditarAnimal = () => {
                 open={open}
                 onClose={()=>setOpen(false)}
                 title="Editar Animal"
-                subtitle="Actualiza la información de este animal"
+                subtitle="Actualiza la información de esta mascota"
                 onConfirm={handleUpdateAnimal}
                 confirmText="Guardar Cambios"
 				positionButtons="justify-end"

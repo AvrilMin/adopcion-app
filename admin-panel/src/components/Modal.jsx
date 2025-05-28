@@ -32,15 +32,22 @@ const Modal = ({
 			    <div>{children}</div>
 
 			    <div className={`flex ${positionButtons} gap-2 mt-4`}>
-			      	<button onClick={onClose} className="px-4 py-2 rounded bg-gray-300 cursor-pointer hover:shadow-xl text-gray-600 font-medium text-[17px]">
-			        	{cancelText}
-			      	</button>
-			      	<button
-			        	onClick={onConfirm}
-			            className={`px-4 py-2 rounded text-white font-medium cursor-pointer hover:shadow-xl text-[17px] ${confirmButtonStyle}`}
-			        >
-			            {confirmText}
-          			</button>
+			      	{onClose && cancelText && (
+					    <button
+					      onClick={onClose}
+					      className="px-4 py-2 rounded bg-gray-300 cursor-pointer text-gray-600 font-medium text-[17px]"
+					    >
+					      {cancelText}
+					    </button>
+					)}
+			      	{onConfirm && confirmText && (
+					    <button
+					      onClick={onConfirm}
+					      className={`px-4 py-2 rounded text-white font-medium cursor-pointer text-[17px] ${confirmButtonStyle}`}
+					    >
+					      {confirmText}
+					    </button>
+					)}
 			    </div>
 		  	</div>
 		</div>

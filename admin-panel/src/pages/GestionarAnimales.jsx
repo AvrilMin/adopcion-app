@@ -38,7 +38,7 @@ const GestionarAnimales = () => {
 
   	return (
 		<div>
-			<h1 className=" h1 mb-8">Gestionar Mascotas</h1>
+			<h1 className="h1 mb-8">Gestionar Mascotas</h1>
 		
 			{/*BARRA DE BUSQUEDA Y BOTÓN AÑADIR */}
 			<div className="w-full mb-8 flex flex-wrap justify-between items-center gap-4">
