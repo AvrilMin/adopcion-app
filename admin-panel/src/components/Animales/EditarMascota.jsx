@@ -11,7 +11,7 @@ const EditarAnimal = () => {
     }
     return (
         <>
-            <button onClick={()=>setOpen(true)} className="bg-[var(--color-celeste)] hover:shadow-xl text-white px-3 py-1 rounded cursor-pointer">Editar</button>
+            <button onClick={()=>setOpen(true)} className="bg-[var(--azuloscuro)] hover:shadow-xl text-white px-3 py-1 rounded cursor-pointer">Editar</button>
 
             <ReusableModal
                 open={open}

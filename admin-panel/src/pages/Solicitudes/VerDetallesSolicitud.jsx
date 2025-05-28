@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoIosArrowBack } from "react-icons/io";
 
 //IMPORT MODAL
 import ReusableModal from '../../components/Modal';
@@ -44,25 +45,23 @@ const VerDetallesSolicitud = () => {
 				confirmText={paso === 2 ? 'Enviar' : undefined}
 				positionButtons="justify-center"
 			>
-				<div className='flex justify-center gap-8 mb-8'>
-
-					<div className="flex flex-col items-center justify-center">
-						<div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${paso === 1 ? 'bg-[var(--color-celeste)] text-white border-[var(--color-celeste)]' : 'bg-white border-gray-400 text-gray-600'}`}>
-					        1
-						</div>
-						<span className={`mt-1 text-sm ${paso === 1 ? 'font-bold text-[var(--color-celeste)]' : 'text-gray-600'}`}>Detalles</span>
-					</div>
-					<div className="flex flex-col items-center justify-center">
-						<div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${paso === 2 ? 'bg-[var(--color-celeste)] text-white border-[var(--color-celeste)]' : 'bg-white border-gray-400 text-gray-600'}`}>
-					        2
-						</div>
-						<span className={`mt-1 text-sm ${paso === 2 ? 'font-bold text-[var(--color-celeste)]' : 'text-gray-600'}`}>Mensaje</span>
-					</div>	
+				{/* Indicador de pasos */}
+				<div className="flex justify-center gap-8 mb-8">
+					{['Detalles', 'Mensaje'].map((nombrePaso, index) => {
+						const step = index + 1;
+						const activo = paso === step;
+						return (
+							<div key={nombrePaso} className="flex flex-col items-center justify-center">
+								<div className={`w-8 h-8 flex items-center justify-center rounded-full border-2 ${activo ? 'bg-[var(--color-celeste)] text-white border-[var(--color-celeste)]' : 'bg-white border-gray-400 text-gray-600'}`}>
+									{step}
+								</div>
+								<span className={`mt-1 text-sm ${activo ? 'font-bold text-[var(--color-celeste)]' : 'text-gray-600'}`}>{nombrePaso}</span>
+							</div>
+						);
+					})}
 				</div>
-				
 
-				<div className='flex flex-col gap-4 text-center'>
-					
+				<div className='flex flex-col gap-4 text-start'>
 					{paso === 1 ? (
 						<>
 							<p><strong>Mascota:</strong> Pepe</p>
@@ -89,8 +88,10 @@ const VerDetallesSolicitud = () => {
 								</button>
 							</div>
 						</>
-				) : (
+					) : (
 						<>
+
+
 							<p>Vas a marcar esta solicitud como <strong>{accion}</strong>.</p>
 							<label className="font-bold">Mensaje para el correo:</label>
 							<textarea
@@ -100,12 +101,9 @@ const VerDetallesSolicitud = () => {
 								className="border border-gray-400 rounded-[5px] h-24 px-2 py-1"
 							/>
 						</>
-				)}
-				
-			</div>
-			
-			</ ReusableModal >
-		
+					)}
+				</div>
+			</ReusableModal>
 		</div>
 	);
 };
