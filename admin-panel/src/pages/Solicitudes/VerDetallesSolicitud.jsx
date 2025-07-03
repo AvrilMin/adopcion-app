@@ -43,7 +43,8 @@ const VerDetallesSolicitud = () => {
 				}}
 				onConfirm={paso === 2 ? handleConfirmar : undefined}
 				confirmText={paso === 2 ? 'Enviar' : undefined}
-				positionButtons="justify-center"
+				positionButtons='justify-center'
+				confirmButtonStyle='bg-green-500'
 			>
 				{/* Indicador de pasos */}
 				<div className="flex justify-center gap-8 mb-8">
@@ -90,7 +91,6 @@ const VerDetallesSolicitud = () => {
 						</>
 					) : (
 						<>
-
 
 							<p>Vas a marcar esta solicitud como <strong>{accion}</strong>.</p>
 							<label className="font-bold">Mensaje para el correo:</label>
